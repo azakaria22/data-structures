@@ -8,7 +8,7 @@ var Graph = function() {
 
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
-  var newNode = Node(node);
+  var newNode = Noode(node);
   this[node] = newNode;
   
 };
@@ -50,14 +50,13 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
 
-  console.log(this);
   _.each(this, function(node) {
     
     cb(node.value);
   });
 };
 
-var Node = function(value) {
+var Noode = function(value) {
   var node = {};
   node.value = value;
 
